@@ -44,7 +44,7 @@ jobs:
           docker tag ${{ env.DOCKERHUB_TAG }}:latest ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO }}:latest
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO }}:latest
 
-      # Part 2: Deploying the container image to the EC2 instance
+      # Part 2: Deploying the container image to the EC2 instance 
       - name: Set up SSH
         run: |
           echo "${{ secrets.AWS_EC2_KEY }}" > ec2-key.pem
