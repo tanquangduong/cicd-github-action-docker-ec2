@@ -66,22 +66,19 @@ jobs:
             # Add the user to the docker group
             sudo usermod -aG docker $USER
 
-            # Apply the new group membership and run Docker commands in a subshell
-            sudo su - $USER -c "
+            # Log in to Docker 
+            echo "${{ secrets.DOCKERHUB_TOKEN }}" | sudo docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-              # Log in to Docker 
-              echo "${{ secrets.DOCKERHUB_TOKEN }}" | sudo docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+            # Verify Docker login
+            docker info
 
-              # Verify Docker login
-              docker info
-
-              # Free up disk space
-              docker system prune -a -f
-              
-              # Pull the Docker image and run the container 
-              docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO }}:latest
-              docker stop ${{ env.DOCKERHUB_REPO }}-container || true
-              docker rm ${{ env.DOCKERHUB_REPO }}-container || true
-              docker run --name ${{ env.DOCKERHUB_REPO }}-container -d -p 8501:8501 ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO }}:latest
-            "
+            # Free up disk space
+            docker system prune -a -f
+            
+            # Pull the Docker image and run the container
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO }}:latest
+            docker stop ${{ env.DOCKERHUB_REPO }}-container || true
+            docker rm ${{ env.DOCKERHUB_REPO }}-container || true
+            docker run --name ${{ env.DOCKERHUB_REPO }}-container -d -p 8501:8501 ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO }}:latest
+          
           EOF
