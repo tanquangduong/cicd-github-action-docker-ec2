@@ -4,11 +4,11 @@ import pandas as pd
 # Define the title and logos for the chat interface
 APP_TITLE = """<div style="text-align: center">
                 <h1 style="font-size: 48px; color: #6366F1;">
-                    CICD - GitHub Action x Docker x AWS EC2
+                    CICD Demo
                 </h1>
                 <p>
                     <b style="font-size: 24px">
-                        Streamlit App
+                        GitHub Action x Docker x AWS EC2 x Streamlit 
                     </b>
                 </p>
             </div>
