@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - main
-  workflow_run:
-    workflows: ["Python package"]
-    types:
-      - completed
+  # workflow_run:
+  #   workflows: ["Python package"]
+  #   types:
+  #     - completed
 
 env:
   DOCKERHUB_REPO: cicd_ec2
