@@ -1,0 +1,10 @@
+version: '3'
+services:
+  simple_app:
+    restart: always
+    build: ./simple_app
+    image: app_streamlit:latest
+    ports:
+      - '8501:8501'
+    volumes:
+      - ./simple_app:/app
