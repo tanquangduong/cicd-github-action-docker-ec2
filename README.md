@@ -81,4 +81,4 @@ Example use case of CI-CD: GitHub Action x Docker x EX2 AWS
     - docker stop cicd-container || true
 - Remove Docker container
     - docker rm cicd-container || true
-
+    - 
