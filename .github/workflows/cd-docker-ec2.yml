@@ -10,7 +10,7 @@ on:
       - completed
 
 env:
-  DOCKERHUB_REPO: cicd_ec2
+  DOCKERHUB_REPO: cicd
   DOCKERHUB_TAG: app_streamlit
 
 jobs:
