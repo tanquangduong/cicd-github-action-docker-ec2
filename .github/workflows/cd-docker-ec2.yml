@@ -1,13 +1,13 @@
 name: Build-Publish-Deploy Docker container
 
 on:
-  # push:
-  #   branches:
-  #     - main
-  workflow_run:
-    workflows: ["Python package"]
-    types:
-      - completed
+  push:
+    branches:
+      - main
+  # workflow_run:
+  #   workflows: ["Python package"]
+  #   types:
+  #     - completed
 
 env:
   DOCKERHUB_REPO: cicd
