@@ -78,7 +78,7 @@ jobs:
               # Free up disk space
               docker system prune -a -f
               
-              # Pull the Docker image and run the container
+              # Pull the Docker image and run the container 
               docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO }}:latest
               docker stop ${{ env.DOCKERHUB_REPO }}-container || true
               docker rm ${{ env.DOCKERHUB_REPO }}-container || true
