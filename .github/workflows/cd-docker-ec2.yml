@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps: 
-      # Part 1: Rebuilding the container image on DockerHub
+      # Part 1: Rebuilding the container image on DockerHub 
       - name: Checkout
         uses: actions/checkout@v3
         
