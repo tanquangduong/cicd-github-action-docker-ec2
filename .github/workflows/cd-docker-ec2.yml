@@ -73,11 +73,11 @@ jobs:
             sudo docker info
 
             # Free up disk space
-            docker system prune -a -f
+            sudo docker system prune -a -f
             
             # Pull the Docker image and run the container
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO }}:latest
-            docker stop ${{ env.DOCKERHUB_REPO }}-container || true
-            docker rm ${{ env.DOCKERHUB_REPO }}-container || true
-            docker run --name ${{ env.DOCKERHUB_REPO }}-container -d -p 8501:8501 ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO }}:latest
+            sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO }}:latest
+            sudo docker stop ${{ env.DOCKERHUB_REPO }}-container || true
+            sudo docker rm ${{ env.DOCKERHUB_REPO }}-container || true
+            sudo docker run --name ${{ env.DOCKERHUB_REPO }}-container -d -p 8501:8501 ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKERHUB_REPO }}:latest
           EOF
