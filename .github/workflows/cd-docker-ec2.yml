@@ -69,6 +69,9 @@ jobs:
             # Log in to Docker
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | sudo docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
+            # Verify Docker login
+            sudo docker info
+
             # Free up disk space
             docker system prune -a -f
             

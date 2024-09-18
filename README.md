@@ -74,10 +74,10 @@ Example use case of CI-CD: GitHub Action x Docker x EX2 AWS
     - docker pull ${{ secrets.DOCKERHUB_USERNAME }}/mlops:latest
 - Run Docker container, name it as 'mlops-container'
     - docker run --name mlops-container -d -p 8501:8501 ${{ secrets.DOCKERHUB_USERNAME }}/mlops:latest
-    - docker run --name cicd_ec2-container -d -p 8501:8501 duongtanquang/cicd_ec2:latest
+    - docker run --name cicd-container -d -p 8501:8501 duongtanquang/cicd_ec2:latest
 - Check Docker log
-    - docker logs cicd_ec2-container
+    - docker logs cicd-container
 - Stop Docker container
-    - docker stop cicd_ec2-container || true
+    - docker stop cicd-container || true
 - Remove Docker container
-    - docker rm cicd_ec2-container || true
+    - docker rm cicd-container || true
