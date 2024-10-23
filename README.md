@@ -35,7 +35,7 @@ Example use case of CI-CD: GitHub Action x Docker x EX2 AWS
         - mv /mnt/c/Users/YourUsername/path/to/ec2-key.pem ~/ec2-key.pem
         - chmod 400 ec2-key.pem
 - Connect to ec2 instance
-    - ssh -i "ec2-key.pem" ubuntu@ec2-15-188-52-171.eu-west-3.compute.amazonaws.com
+    - ssh -i "ec2-key.pem" ubuntu@ec2-xx-xxx-xx-xxx.eu-west-3.compute.amazonaws.com
 
 ## Install Miniconda in EC2 instance
 - Download latest miniconda installer
